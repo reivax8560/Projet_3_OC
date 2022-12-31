@@ -1,0 +1,176 @@
+/******************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 42px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 64px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 52px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 30px 0;
+}
+.header__icone {
+  display: none;
+  /*position: absolute; left: 25px; top: 33px;*/
+}
+.header__img {
+  width: 45%;
+}
+
+.localisation {
+  background-color: #ebebeb;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+.localisation__icone {
+  position: relative;
+  right: 60px;
+}
+
+.presentation {
+  padding: 100px 20px 150px 20px;
+  background: #f8f8f8;
+}
+.presentation__titre {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+.presentation__txt {
+  text-align: center;
+  margin: 30px auto 80px auto;
+  font-weight: lighter;
+  font-size: 48px;
+}
+.presentation__btn {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border-radius: 70px;
+  display: flex;
+  margin: auto;
+  padding: 43px 50px;
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fonctionnement {
+  padding: 120px 60px 120px 80px;
+}
+.fonctionnement__titre {
+  margin: 0 0 70px 0;
+  position: relative;
+  right: 30px;
+}
+
+.btn-etape {
+  background: #f8f8f8;
+  padding: 30px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 60px;
+  margin: 60px auto;
+  height: 130px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+}
+.btn-etape__div-chiffre {
+  background: #9356DC;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 30px;
+}
+.btn-etape__div-chiffre div {
+  color: white;
+  font-size: 34px;
+}
+.btn-etape__icone {
+  color: #888888;
+  margin: 0 70px 0 30px;
+}
+.btn-etape__icone-store {
+  color: #9356DC;
+  margin: 0 70px 0 30px;
+}
+.btn-etape__txt {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.restaurants {
+  padding: 120px 60px;
+  background: #f8f8f8;
+}
+
+.vignette-resto {
+  margin: 60px auto;
+  border-radius: 40px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+}
+.vignette-resto__lien {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  border-radius: 40px;
+}
+.vignette-resto__new {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  background: #99E2D0;
+  color: #278870;
+  padding: 20px 40px;
+  font-size: 36px;
+  border-radius: 8px;
+}
+.vignette-resto__img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 40px 40px 0 0;
+}
+.vignette-resto__bandeau {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px;
+  border-radius: 0 0 40px 40px;
+}
+.vignette-resto__bandeau i {
+  margin-right: 30px;
+}
+.vignette-resto__texte p {
+  margin-top: 10px;
+  font-size: 44px;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,21 @@
 {
-  "name": "oh_my_food",
+  "name": "code_projet_3",
   "version": "1.0.0",
-  "description": "restaurant application",
+  "description": "site Oh my food",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/main.css --style expanded",
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css -w --style expanded",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reivax8560/Projet_3_OC.git"
   },
   "author": "",
   "license": "ISC",
-  "browserslist": "last 4 versions"
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/reivax8560/Projet_3_OC/issues"
+  },
+  "homepage": "https://github.com/reivax8560/Projet_3_OC#readme"
 }
