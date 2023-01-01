@@ -125,7 +125,7 @@ h3 {
 }
 
 .restaurants {
-  padding: 120px 60px;
+  padding: 140px 60px 100px 60px;
   background: #f8f8f8;
 }
 
@@ -191,6 +191,36 @@ h3 {
 }
 .vignette-resto .vignette-bandeau__coeur-plein:active {
   opacity: 100%;
+}
+
+.footer {
+  background: #353535;
+  padding: 60px 70px 80px 70px;
+}
+.footer h4 {
+  font-family: "Shrikhand";
+  color: white;
+  font-weight: lighter;
+  font-size: 46px;
+  margin-bottom: 50px;
+}
+.footer .list-item {
+  list-style: none;
+  margin: 20px 0;
+}
+.footer .list-item a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  font-weight: lighter;
+  font-size: 42px;
+  align-items: center;
+}
+.footer .list-item a .icone-1 {
+  margin-right: 30px;
+}
+.footer .list-item a .icone-2 {
+  margin-right: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */

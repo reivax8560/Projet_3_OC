@@ -150,7 +150,7 @@ h3 {
 }
 
 .restaurants {
-    padding: 120px 60px;
+    padding: 140px 60px 100px 60px;
     background: $couleur-4;
 }
 
@@ -222,6 +222,41 @@ h3 {
                 &:active {
                     opacity: 100%;
                 }
+            }
+        }
+    }
+}
+
+.footer {
+    background: #353535;
+    padding: 60px 70px 80px 70px;
+
+    h4 {
+        font-family: 'Shrikhand';
+        color: white;
+        font-weight: lighter;
+        font-size: 46px;
+        margin-bottom: 50px;
+    }
+
+    .list-item {
+        list-style: none;
+        margin: 20px 0;
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            font-weight: lighter;
+            font-size: 42px;
+            align-items: center;
+
+            .icone-1 {
+                margin-right: 30px;
+            }
+
+            .icone-2 {
+                margin-right: 23px;
             }
         }
     }
