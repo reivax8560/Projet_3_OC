@@ -9,6 +9,66 @@ body {
   font-size: 42px;
 }
 
+.filtre-blanc {
+  background: white;
+  animation: filtre 2000ms linear forwards;
+}
+
+@keyframes filtre {
+  0% {
+    opacity: 0.3;
+  }
+  99% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*          BASE LOADING SPINNER         */
+.loading-spinner {
+  display: inline-block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-right: -250px;
+  border-radius: 375px;
+  border: 20px solid rgba(100, 100, 100, 0.9);
+  animation: rotation 2000ms linear forwards;
+  z-index: 3;
+}
+
+/*          LOADING SPINNER         */
+.loading-spinner::after {
+  content: "";
+  position: fixed;
+  left: -20px;
+  top: -20px;
+  width: 500px;
+  height: 500px;
+  border-radius: 375px;
+  border: 20px solid transparent;
+  border-top-color: rgb(255, 0, 255);
+  animation: rotation 2000ms linear forwards;
+  z-index: 4;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0turn);
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(2turn);
+    opacity: 0;
+  }
+}
 h1 {
   font-weight: 700;
   font-size: 64px;
