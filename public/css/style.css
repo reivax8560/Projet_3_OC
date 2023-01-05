@@ -1,19 +1,3 @@
-/******************************************************************/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 42px;
-}
-
-.filtre-blanc {
-  background: white;
-  animation: filtre 2000ms linear forwards;
-}
-
 @keyframes filtre {
   0% {
     opacity: 0.3;
@@ -25,37 +9,6 @@ body {
     opacity: 1;
   }
 }
-/*          BASE LOADING SPINNER         */
-.loading-spinner {
-  display: inline-block;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 500px;
-  height: 500px;
-  margin-left: -250px;
-  margin-right: -250px;
-  border-radius: 375px;
-  border: 20px solid rgba(100, 100, 100, 0.9);
-  animation: rotation 2000ms linear forwards;
-  z-index: 3;
-}
-
-/*          LOADING SPINNER         */
-.loading-spinner::after {
-  content: "";
-  position: fixed;
-  left: -20px;
-  top: -20px;
-  width: 500px;
-  height: 500px;
-  border-radius: 375px;
-  border: 20px solid transparent;
-  border-top-color: rgb(255, 0, 255);
-  animation: rotation 2000ms linear forwards;
-  z-index: 4;
-}
-
 @keyframes rotation {
   0% {
     transform: rotate(0turn);
@@ -69,24 +22,71 @@ body {
     opacity: 0;
   }
 }
+/**********************************************************/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
 h1 {
   font-weight: 700;
-  font-size: 64px;
+  font-size: 24px;
 }
 
 h2 {
   font-weight: 600;
-  font-size: 52px;
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 48px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filtre-blanc {
+  background: white;
+  animation: filtre 2000ms linear forwards;
+}
+
+/***************LOADING SPINNER****************/
+.loading-spinner {
+  display: inline-block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-right: -100px;
+  border-radius: 150px;
+  border: 10px solid rgba(53, 53, 53, 0.3);
+  animation: rotation 2000ms linear forwards;
+  z-index: 3;
+}
+
+.loading-spinner::after {
+  content: "";
+  position: fixed;
+  left: -10px;
+  top: -10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  border: 10px solid transparent;
+  border-top-color: #FF3BC9;
+  animation: rotation 2000ms linear forwards;
+  z-index: 4;
 }
 
 .header {
   display: flex;
   justify-content: center;
-  padding: 50px 0 30px 0;
+  padding: 25px 0 15px 0;
 }
 .header__icone {
   display: none;
@@ -100,8 +100,8 @@ h3 {
   background-color: #ebebeb;
   display: flex;
   justify-content: center;
-  padding: 40px 0;
-  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
+  box-shadow: inset 0 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .localisation__icone {
   position: relative;
@@ -109,7 +109,7 @@ h3 {
 }
 
 .presentation {
-  padding: 100px 20px 150px 20px;
+  padding: 40px 20px 45px 20px;
   background: #f8f8f8;
 }
 .presentation__titre {
@@ -119,123 +119,120 @@ h3 {
 }
 .presentation__txt {
   text-align: center;
-  margin: 30px auto 80px auto;
+  margin: 15px auto 30px auto;
   font-weight: lighter;
-  font-size: 48px;
+  font-size: 18px;
 }
 .presentation__btn {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 70px;
   display: flex;
   margin: auto;
-  padding: 43px 50px;
-  font-size: 40px;
+  padding: 15px 20px;
+  font-size: 16px;
   font-weight: 500;
   color: white;
   border: none;
-  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
 .fonctionnement {
-  padding: 120px 60px 120px 80px;
+  padding: 45px 20px 40px 20px;
 }
 .fonctionnement__titre {
-  margin: 0 0 70px 0;
+  margin: 0 0 32px 0;
   position: relative;
-  right: 30px;
+  right: 3px;
 }
 
 .btn-etape {
   background: #f8f8f8;
-  padding: 30px 0;
+  padding: 25px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 60px;
-  margin: 60px auto;
-  height: 130px;
-  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 22px auto;
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
+}
+.btn-etape:active .btn-etape__icone {
+  color: #9356DC;
 }
 .btn-etape__div-chiffre {
   background: #9356DC;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 25px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  right: 30px;
+  right: 12px;
 }
 .btn-etape__div-chiffre div {
   color: white;
-  font-size: 34px;
+  font-size: 13px;
 }
 .btn-etape__icone {
   color: #888888;
-  margin: 0 70px 0 30px;
-}
-.btn-etape__icone-store {
-  color: #9356DC;
-  margin: 0 70px 0 30px;
-}
-.btn-etape__txt {
-  font-size: 42px;
-  font-weight: 600;
+  margin: 0 30px 0 12px;
 }
 
 .restaurants {
-  padding: 140px 60px 100px 60px;
+  padding: 55px 20px 40px 20px;
   background: #f8f8f8;
 }
 
 .vignette-resto {
-  margin: 60px auto;
-  border-radius: 40px;
-  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.2);
 }
 .vignette-resto .vignette-a {
   text-decoration: none;
   color: black;
   display: block;
   position: relative;
-  border-radius: 40px;
+  border-radius: 15px;
 }
 .vignette-resto .vignette-a__img {
   width: 100%;
-  height: 460px;
+  height: 175px;
   object-fit: cover;
-  border-radius: 40px 40px 0 0;
+  border-radius: 15px 15px 0 0;
 }
 .vignette-resto .vignette-a__new {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 12px;
+  top: 12px;
   background: #99E2D0;
   color: #278870;
-  padding: 20px 40px;
-  font-size: 36px;
-  border-radius: 8px;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 2px;
 }
 .vignette-resto .vignette-bandeau {
   background: white;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 30px;
-  border-radius: 0 0 40px 40px;
+  padding: 15px 10px;
+  border-radius: 0 0 15px 15px;
+}
+.vignette-resto .vignette-bandeau__txt h3 {
+  font-size: 18px;
 }
 .vignette-resto .vignette-bandeau__txt p {
-  margin-top: 10px;
-  font-size: 44px;
+  margin-top: 5px;
+  font-size: 17px;
   font-weight: 300;
 }
 .vignette-resto .vignette-bandeau__coeur {
-  margin: 20px 30px 0 0;
-  font-size: 70px;
+  margin: 5px 20px 0 0;
+  font-size: 26px;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 20px;
+  height: 20px;
 }
 .vignette-resto .vignette-bandeau__coeur-vide {
   position: absolute;
@@ -255,32 +252,32 @@ h3 {
 
 .footer {
   background: #353535;
-  padding: 60px 70px 80px 70px;
+  padding: 20px 40px 30px 25px;
 }
-.footer h4 {
+.footer__titre {
   font-family: "Shrikhand";
   color: white;
   font-weight: lighter;
-  font-size: 46px;
-  margin-bottom: 50px;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
-.footer .list-item {
+.footer .item-liste {
   list-style: none;
-  margin: 20px 0;
+  margin: 7px 0;
 }
-.footer .list-item a {
+.footer .item-liste-a {
   text-decoration: none;
   color: white;
   display: flex;
   font-weight: lighter;
-  font-size: 42px;
+  font-size: 16px;
   align-items: center;
 }
-.footer .list-item a .icone-1 {
-  margin-right: 30px;
+.footer .item-liste-a__icone-1 {
+  margin-right: 10px;
 }
-.footer .list-item a .icone-2 {
-  margin-right: 23px;
+.footer .item-liste-a__icone-2 {
+  margin-right: 7px;
 }
 
 /*# sourceMappingURL=style.css.map */
