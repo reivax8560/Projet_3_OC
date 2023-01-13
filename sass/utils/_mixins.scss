@@ -1,0 +1,7 @@
+@mixin shadow($opacity: 0.1) {
+    box-shadow: 0 5px 10px 3px rgba(#000000, $opacity);
+}
+
+@mixin gradient {
+    background: linear-gradient(to bottom right, $couleur-2, $couleur-1);
+}

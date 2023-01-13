@@ -1,82 +1,46 @@
-$couleur-1 : #9356DC;
-$couleur-2 : #FF79DA;
-$couleur-3 : #99E2D0;
-$couleur-4 : #f8f8f8;
-$couleur-5 : #353535;
+@import "./utils/variables";
 
-@mixin shadow {
-    box-shadow: 0 5px 10px 3px rgba($color: #000000, $alpha: 0.2);
-}
+@import "./utils/mixins";
 
-@mixin gradient {
-    background: linear-gradient(to bottom right, $couleur-2, $couleur-1);
-}
+@import "./utils/keyframes";
 
-@keyframes filtre {
-    0% {
-        opacity: 0.3;
-    }
+@import "./layout/_header.scss";
 
-    99% {
-        opacity: 0.3;
-    }
+@import "./components/bouton-principal";
 
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0turn);
-        opacity: 1;
-    }
-
-    99% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: rotate(2turn);
-        opacity: 0;
-    }
-}
-
-/**********************************************************/
+@import "./layout/footer";
+/**********************    GENERAL   **********************/
 * {
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    position: relative;
 }
 h1 {
     font-weight: 700;
     font-size: 24px;
 }
-
 h2 {
     font-weight: 600;
     font-size: 24px;
 }
-
 h3 {
     font-size: 16px;
     font-weight: 600;
 }
+/***************    ANIMATION LOADING ACCUEIL   **************/
 .filtre-blanc {
     background: white;
     animation: filtre 2000ms linear forwards;
 }
-
-/***************LOADING SPINNER****************/
 .loading-spinner {
     display: inline-block;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 30%;
     width: 200px;
     height: 200px;
     margin-left: -100px;
@@ -86,7 +50,6 @@ h3 {
     animation: rotation 2000ms linear forwards;
     z-index: 3;
 }
-
 .loading-spinner::after {
     content: '';
     position: fixed;
@@ -100,21 +63,8 @@ h3 {
     animation: rotation 2000ms linear forwards;
     z-index: 4;
 }
+/************************   ACCUEIL    ***********************/
 
-.header {
-    display: flex;
-    justify-content: center;
-    padding: 25px 0 15px 0;
-
-    &__icone {
-        display: none;
-        /*position: absolute; left: 25px; top: 33px;*/
-    }
-
-    &__img {
-        width: 45%;
-    }
-}
 
 .localisation {
     background-color: #ebebeb;
@@ -125,7 +75,7 @@ h3 {
 
     &__icone {
         position: relative;
-        right: 60px;
+        right: 25px;
     }
 }
 
@@ -144,19 +94,6 @@ h3 {
         margin: 15px auto 30px auto;
         font-weight: lighter;
         font-size: 18px;
-    }
-
-    &__btn {
-        @include gradient();
-        border-radius: 70px;
-        display: flex;
-        margin: auto;
-        padding: 15px 20px;
-        font-size: 16px;
-        font-weight: 500;
-        color: white;
-        border: none;
-        @include shadow();
     }
 }
 
@@ -181,6 +118,9 @@ h3 {
     @include shadow();
 
     &:active {
+        @include shadow(0.3);
+        background: #FAFAFA;
+
         .btn-etape__icone {
             color: $couleur-1;
         }
@@ -218,6 +158,10 @@ h3 {
     margin: 20px auto;
     border-radius: 15px;
     @include shadow();
+
+    &:active {
+        @include shadow(0.3);
+    }
 
     .vignette-a {
         text-decoration: none;
@@ -290,37 +234,139 @@ h3 {
     }
 }
 
-.footer {
-    background: $couleur-5;
-    padding: 20px 40px 30px 25px;
+/************************   MENUS  ************************/
 
-    &__titre {
-        font-family: 'Shrikhand';
-        color: white;
-        font-weight: lighter;
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
+.header__fleche {
+    color: black;
+}
+.photo-resto {
+    height: 280px;
+}
+.photo-resto-vertical {
+    width: 100%;
+}
+.menu {
+    background: $couleur-4;
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    top: -50px;
+    padding: 35px 15px;
 
-    .item-liste {
-        list-style: none;
-        margin: 7px 0;
+    &__bloc-titre {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        &-a {
-            text-decoration: none;
-            color: white;
-            display: flex;
+        & h1 {
+            font-family: 'Shrikhand';
+            font-size: 28px;
             font-weight: lighter;
-            font-size: 16px;
-            align-items: center;
-
-            &__icone-1 {
-                margin-right: 10px;
-            }
-
-            &__icone-2 {
-                margin-right: 7px;
-            }
+        }
+        & i {
+            margin-right: 30px;
+            font-size: 26px;
         }
     }
+}
+.menu-img-vertical {
+    top: -250px;
+}
+.section-plat {
+    margin: 25px 0 40px 0;
+
+    &__titre {
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    &__tiret {
+        border-top: 3px solid $couleur-3;
+        width: 40px;
+        margin: 5px 0;
+    }
+}
+.btn-animation {
+position: relative;
+margin: 12px 0;
+border-radius: 15px;
+overflow: hidden;
+@include shadow;
+
+&:active {
+    @include shadow(0.3);
+}
+}
+.btn-menu {
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    padding: 14px 10px;
+    background: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    // overflow: hidden;
+
+    &__titre {
+        font-size: 17px;
+        margin-bottom: 5px;
+        width: 85%;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &__ligne-inf {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .detail {
+            font-size: 15px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .prix {
+            font-size: 15px;
+            font-weight: bold;
+            margin: auto 10px auto 15px;
+        }
+    }
+
+    &:active .detail {
+        animation: btn-menu-detail 500ms forwards;
+    }
+    &:active .prix {
+        animation: btn-menu-prix 500ms forwards;
+    }
+    &:active + .bloc-vert {
+        animation: btn-menu-bloc-vert 500ms forwards;
+    }
+    &:active + .bloc-vert .icone-check {
+        animation: btn-menu-icone-check 500ms forwards;
+    }
+}
+.bloc-vert {
+    background: $couleur-3;
+    height: 70px;
+    width: 60px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    position: absolute;
+    right: -65px;
+    top: 0;
+
+    .icone-check {
+        margin: auto;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+.bouton-page-menu {
+    padding: 15px 50px;
 }

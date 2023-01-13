@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0 15px 0;
+
+    &__fleche {
+        position: absolute; left: 25px; top: 36px;
+    }
+
+    &__img {
+        width: 45%;
+    }
+}

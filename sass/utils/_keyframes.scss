@@ -1,0 +1,78 @@
+@keyframes filtre {
+    0% {
+        opacity: 0.3;
+    }
+
+    99% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0turn);
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(2turn);
+        opacity: 0;
+    }
+}
+
+@keyframes btn-menu-detail {
+    0% {
+        width: 100%;
+    }
+
+    99% {
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+@keyframes btn-menu-prix {
+    0% {
+        transform: translateX(0);
+    }
+
+    99% {
+    }
+
+    100% {
+        transform: translateX(-60px);
+    }
+}
+@keyframes btn-menu-bloc-vert {
+    0% {
+        transform: translateX(0);
+    }
+
+    99% {
+    }
+
+    100% {
+        transform: translateX(-65px);
+    }
+}
+@keyframes btn-menu-icone-check {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    99% {
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
