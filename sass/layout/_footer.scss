@@ -2,17 +2,29 @@
     background: $couleur-5;
     padding: 20px 40px 30px 25px;
 
+    @include tablet-display {
+        padding: 40px 40px 300px 25px;
+    }
+
     &__titre {
         font-family: 'Shrikhand';
         color: white;
         font-weight: lighter;
         font-size: 18px;
         margin-bottom: 15px;
+        @include tablet-display {
+            font-size: 32px;
+            margin-bottom: 25px;    
+        }    
     }
 
     .item-liste {
         list-style: none;
         margin: 7px 0;
+
+        @include tablet-display {
+            margin: 15px 0;
+        }        
 
         &-a {
             text-decoration: none;
@@ -22,12 +34,22 @@
             font-size: 16px;
             align-items: center;
 
+            @include tablet-display {
+                font-size: 24px;
+            }        
+
             &__icone-1 {
                 margin-right: 10px;
+                @include tablet-display {
+                    margin-right: 20px;
+                }                
             }
 
             &__icone-2 {
                 margin-right: 7px;
+                @include tablet-display {
+                    margin-right: 17px;
+                }                
             }
         }
     }

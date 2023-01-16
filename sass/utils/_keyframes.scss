@@ -27,7 +27,16 @@
         opacity: 0;
     }
 }
-
+@keyframes apparition-menu {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
 @keyframes btn-menu-detail {
     0% {
         width: 100%;
@@ -37,7 +46,7 @@
     }
 
     100% {
-        width: 70%;
+        width: 60%;
     }
 }
 @keyframes btn-menu-prix {

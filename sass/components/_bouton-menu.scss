@@ -1,0 +1,104 @@
+.btn-animation {
+    position: relative;
+    margin: 12px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    @include shadow;
+    @include tablet-display {
+        width: 70%;
+    }
+    &:active {
+        @include shadow(0.3);
+    }
+}
+.btn-menu {
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    padding: 14px 10px;
+    background: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    @include tablet-display {
+        height: 100px;
+    }
+    &__titre {
+        font-size: 17px;
+        margin-bottom: 5px;
+        width: 85%;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include tablet-display {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }    
+    }
+    &__ligne-inf {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .detail {
+            font-size: 15px;
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include tablet-display {
+                font-size: 20px;
+            }        
+        }
+        .prix {
+            font-size: 15px;
+            font-weight: bold;
+            margin: auto 10px auto 15px;
+            @include tablet-display {
+                font-size: 20px;
+            }        
+        }
+    }
+
+    &:active .btn-menu__titre {
+        animation: btn-menu-detail 500ms forwards;
+    }
+    &:active .detail {
+        animation: btn-menu-detail 500ms forwards;
+    }
+    &:active .prix {
+        animation: btn-menu-prix 500ms forwards;
+    }
+    &:active + .bloc-vert {
+        animation: btn-menu-bloc-vert 500ms forwards;
+    }
+    &:active + .bloc-vert .icone-check {
+        animation: btn-menu-icone-check 500ms forwards;
+    }
+}
+.bloc-vert {
+    background: $couleur-3;
+    height: 70px;
+    width: 60px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    position: absolute;
+    right: -65px;
+    top: 0;
+    @include tablet-display {
+        height: 100px;
+        width: 80px;
+        right: -80px;
+    }
+
+    .icone-check {
+        margin: auto;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}

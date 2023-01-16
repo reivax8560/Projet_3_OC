@@ -1,5 +1,6 @@
 .bouton-principal {
     @include gradient();
+    @include shadow();
     border-radius: 70px;
     display: flex;
     margin: auto;
@@ -8,5 +9,17 @@
     font-weight: 500;
     color: white;
     border: none;
-    @include shadow();
+
+    @include tablet-display {
+        margin: 35px auto 0 auto;
+        font-size: 22px;
+        padding: 25px 30px;
+    }
+}
+.bouton-page-menu {
+    padding: 15px 50px;
+    @include tablet-display {
+        padding: 20px 70px;
+        font-size: 24px;
+    }
 }

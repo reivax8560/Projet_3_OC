@@ -8,6 +8,8 @@
 
 @import "./components/bouton-principal";
 
+@import "./components/bouton-menu";
+
 @import "./layout/footer";
 /**********************    GENERAL   **********************/
 * {
@@ -22,14 +24,23 @@ body {
 h1 {
     font-weight: 700;
     font-size: 24px;
+    @include tablet-display {
+        font-size: 28px;
+    }
 }
 h2 {
     font-weight: 600;
     font-size: 24px;
+    @include tablet-display {
+        font-size: 28px;
+    }
 }
 h3 {
     font-size: 16px;
     font-weight: 600;
+    @include tablet-display {
+        font-size: 22px;
+    }
 }
 /***************    ANIMATION LOADING ACCUEIL   **************/
 .filtre-blanc {
@@ -72,6 +83,10 @@ h3 {
     justify-content: center;
     padding: 15px 0;
     box-shadow: inset 0 2px 2px 1px rgba($color: #000000, $alpha: 0.2);
+    @include tablet-display {
+        font-size: 22px;
+        padding: 25px 0;
+    }
 
     &__icone {
         position: relative;
@@ -82,6 +97,11 @@ h3 {
 .presentation {
     padding: 40px 20px 45px 20px;
     background: $couleur-4;
+    @include tablet-display {
+        padding: 80px 0;
+        margin: 30px 30px;
+        border-radius: 30px;
+    }
 
     &__titre {
         text-align: center;
@@ -94,14 +114,21 @@ h3 {
         margin: 15px auto 30px auto;
         font-weight: lighter;
         font-size: 18px;
+        @include tablet-display {
+            margin: 25px auto 40px auto;
+            font-size: 22px;
+        }
     }
 }
 
 .fonctionnement {
     padding: 45px 20px 40px 20px;
+    @include tablet-display {
+        padding: 60px 40px;
+    }
 
     &__titre {
-        margin: 0 0 32px 0;
+        margin: 0 0 50px 0;
         position: relative;
         right: 3px;
     }
@@ -116,6 +143,13 @@ h3 {
     border-radius: 20px;
     margin: 22px auto;
     @include shadow();
+
+    @include tablet-display {
+        width: 60%;
+        padding: 25px 0;
+        margin: 30px auto;
+        border-radius: 30px;
+    }
 
     &:active {
         @include shadow(0.3);
@@ -137,27 +171,59 @@ h3 {
         position: relative;
         right: 12px;
 
+        @include tablet-display {
+            width: 70px;
+            height: 70px;
+            right: 100px;
+        }
+
         div {
             color: white;
             font-size: 13px;
+
+            @include tablet-display {
+                font-size: 24px;
+            }
         }
     }
 
     &__icone {
         color: #888888;
         margin: 0 30px 0 12px;
+
+        @include tablet-display {
+            font-size: 28px;
+        }
     }
 }
 
 .restaurants {
     padding: 55px 20px 40px 20px;
     background: $couleur-4;
+    @include tablet-display {
+        padding: 60px 40px;
+    }
+
+    &__titre {
+        margin: 10px 0 20px 0;
+    }
+    &__grille-vignettes {
+        @include tablet-display {
+            display: flex;
+            flex-wrap: wrap;    
+        }
+    }
 }
 
 .vignette-resto {
     margin: 20px auto;
     border-radius: 15px;
     @include shadow();
+
+    @include tablet-display {
+        width: 45%;
+        margin: 40px auto;
+    }
 
     &:active {
         @include shadow(0.3);
@@ -186,6 +252,11 @@ h3 {
             padding: 5px 15px;
             font-size: 14px;
             border-radius: 2px;
+            @include tablet-display {
+                padding: 10px 20px;
+                font-size: 18px;
+                border-radius: 5px;    
+            }
         }
     }
 
@@ -197,13 +268,25 @@ h3 {
         padding: 15px 10px;
         border-radius: 0 0 15px 15px;
 
+        @include tablet-display {
+            padding: 20px 20px;
+        }
+
+
         &__txt h3 {
             font-size: 18px;
+
+            @include tablet-display {
+                font-size: 22px;
+            }
         }
         &__txt p {
             margin-top: 5px;
             font-size: 17px;
             font-weight: 300;
+            @include tablet-display {
+                font-size: 19px;
+            }
         }
 
         &__coeur {
@@ -212,6 +295,10 @@ h3 {
             position: relative;
             width: 20px;
             height: 20px;
+
+            @include tablet-display {
+                font-size: 30px;
+            }
 
             &-vide {
                 position: absolute;
@@ -236,21 +323,41 @@ h3 {
 
 /************************   MENUS  ************************/
 
-.header__fleche {
-    color: black;
+.apparition-menu-btn-1 {
+    animation: apparition-menu 600ms both;
+}
+.apparition-menu-btn-2 {
+    animation: apparition-menu 600ms 150ms both;
+}
+.apparition-menu-btn-3 {
+    animation: apparition-menu 600ms 300ms both;
+}
+.apparition-menu-btn-4 {
+    animation: apparition-menu 600ms 450ms both;
 }
 .photo-resto {
     height: 280px;
+    @include tablet-display {
+        width: 100%;
+        object-fit: cover;
+    }
 }
 .photo-resto-vertical {
-    width: 100%;
+    height: 500px;
+    @include tablet-display {
+        width: 100%;
+    }
 }
 .menu {
     background: $couleur-4;
     border-radius: 50px 50px 0 0;
     position: relative;
-    top: -50px;
+    margin-top: -50px;
     padding: 35px 15px;
+    @include tablet-display {
+        margin-top: 0;
+        padding: 60px 30px;
+    }
 
     &__bloc-titre {
         display: flex;
@@ -261,6 +368,9 @@ h3 {
             font-family: 'Shrikhand';
             font-size: 28px;
             font-weight: lighter;
+            @include tablet-display {
+                font-size: 34px;
+            }
         }
         & i {
             margin-right: 30px;
@@ -269,104 +379,40 @@ h3 {
     }
 }
 .menu-img-vertical {
-    top: -250px;
+    margin-top: -250px;
+    @include tablet-display {
+        margin-top: -180px;
+        border-radius: 0;
+    }
 }
 .section-plat {
     margin: 25px 0 40px 0;
-
+    @include tablet-display {
+        padding: 30px;
+    }
+    
     &__titre {
         font-size: 16px;
         font-weight: lighter;
+        @include tablet-display {
+            font-size: 24px;
+        }
+    
     }
     &__tiret {
         border-top: 3px solid $couleur-3;
         width: 40px;
         margin: 5px 0;
+        @include tablet-display {
+            width: 70px;
+            border-top: 5px solid $couleur-3;
+        }
     }
-}
-.btn-animation {
-position: relative;
-margin: 12px 0;
-border-radius: 15px;
-overflow: hidden;
-@include shadow;
-
-&:active {
-    @include shadow(0.3);
-}
-}
-.btn-menu {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    padding: 14px 10px;
-    background: white;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    // overflow: hidden;
-
-    &__titre {
-        font-size: 17px;
-        margin-bottom: 5px;
-        width: 85%;
-        text-align: left;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    &__ligne-inf {
-        width: 100%;
+    &__grille-btn {
         display: flex;
-        justify-content: space-between;
-        position: relative;
-
-        .detail {
-            font-size: 15px;
-            text-align: left;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        .prix {
-            font-size: 15px;
-            font-weight: bold;
-            margin: auto 10px auto 15px;
+        flex-direction: column;
+        @include tablet-display {
+            align-items: center;
         }
     }
-
-    &:active .detail {
-        animation: btn-menu-detail 500ms forwards;
-    }
-    &:active .prix {
-        animation: btn-menu-prix 500ms forwards;
-    }
-    &:active + .bloc-vert {
-        animation: btn-menu-bloc-vert 500ms forwards;
-    }
-    &:active + .bloc-vert .icone-check {
-        animation: btn-menu-icone-check 500ms forwards;
-    }
-}
-.bloc-vert {
-    background: $couleur-3;
-    height: 70px;
-    width: 60px;
-    border-radius: 0 15px 15px 0;
-    display: flex;
-    position: absolute;
-    right: -65px;
-    top: 0;
-
-    .icone-check {
-        margin: auto;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-    }
-}
-.bouton-page-menu {
-    padding: 15px 50px;
 }
