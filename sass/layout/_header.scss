@@ -2,24 +2,53 @@
     display: flex;
     justify-content: center;
     padding: 25px 0 15px 0;
+
     @include tablet-display {
         padding: 35px 0 25px 0;
     }
+
+    @include desktop-display {
+        justify-content: left;
+        margin-left: 50px;
+        padding: 25px 0 20px 0;
+    }
+
     &__fleche {
         color: black;
-        position: absolute; 
-        left: 25px; top: 36px;
+        position: absolute;
+        left: 25px;
+        top: 36px;
+
         @include tablet-display {
-            position: absolute; 
-            left: 50px; top: 55px;
+            position: absolute;
+            left: 50px;
+            top: 55px;
             font-size: 24px;
-        }    
+        }
+
+        @include desktop-display {
+            position: absolute;
+            left: 50px;
+            top: 40px;
+            font-size: 24px;
+        }
     }
 
     &__img {
         width: 45%;
+
         @include tablet-display {
             width: 35%;
+        }
+
+        @include desktop-display {
+            width: 300px;
+        }
+
+        &--menu {
+            @include desktop-display {
+                margin-left: 100px;
+            }
         }
     }
 }

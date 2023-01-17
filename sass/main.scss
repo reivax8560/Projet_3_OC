@@ -11,42 +11,52 @@
 @import "./components/bouton-menu";
 
 @import "./layout/footer";
+
 /**********************    GENERAL   **********************/
 * {
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     position: relative;
 }
+
 h1 {
     font-weight: 700;
     font-size: 24px;
+
     @include tablet-display {
         font-size: 28px;
     }
 }
+
 h2 {
     font-weight: 600;
     font-size: 24px;
+
     @include tablet-display {
         font-size: 28px;
     }
 }
+
 h3 {
     font-size: 16px;
     font-weight: 600;
+
     @include tablet-display {
         font-size: 22px;
     }
 }
+
 /***************    ANIMATION LOADING ACCUEIL   **************/
 .filtre-blanc {
     background: white;
     animation: filtre 2000ms linear forwards;
 }
+
 .loading-spinner {
     display: inline-block;
     position: fixed;
@@ -61,6 +71,7 @@ h3 {
     animation: rotation 2000ms linear forwards;
     z-index: 3;
 }
+
 .loading-spinner::after {
     content: '';
     position: fixed;
@@ -74,6 +85,7 @@ h3 {
     animation: rotation 2000ms linear forwards;
     z-index: 4;
 }
+
 /************************   ACCUEIL    ***********************/
 
 
@@ -82,10 +94,23 @@ h3 {
     display: flex;
     justify-content: center;
     padding: 15px 0;
-    box-shadow: inset 0 2px 2px 1px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: inset 0 8px 5px -4px rgba($color: #000000, $alpha: 0.2);
+
     @include tablet-display {
         font-size: 22px;
         padding: 25px 0;
+    }
+
+    @include desktop-display {
+        position: absolute;
+        top: 25px;
+        right: 50px;
+        width: 300px;
+        font-size: 18px;
+        background-color: white;
+        padding: 13px 20px;
+        color: #696969;
+        border-radius: 20px;
     }
 
     &__icone {
@@ -97,11 +122,19 @@ h3 {
 .presentation {
     padding: 40px 20px 45px 20px;
     background: $couleur-4;
+
     @include tablet-display {
         padding: 80px 0;
         margin: 30px 30px;
         border-radius: 30px;
     }
+
+    @include desktop-display {
+        padding: 80px 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
 
     &__titre {
         text-align: center;
@@ -114,6 +147,7 @@ h3 {
         margin: 15px auto 30px auto;
         font-weight: lighter;
         font-size: 18px;
+
         @include tablet-display {
             margin: 25px auto 40px auto;
             font-size: 22px;
@@ -123,8 +157,13 @@ h3 {
 
 .fonctionnement {
     padding: 45px 20px 40px 20px;
+
     @include tablet-display {
         padding: 60px 40px;
+    }
+
+    @include desktop-display {
+        padding: 40px;
     }
 
     &__titre {
@@ -146,10 +185,18 @@ h3 {
 
     @include tablet-display {
         width: 60%;
-        padding: 25px 0;
+        padding: 20px 0;
         margin: 30px auto;
         border-radius: 30px;
     }
+
+    @include desktop-display {
+        width: 30%;
+        padding: 10px 0;
+        margin: 25px auto;
+        border-radius: 20px;
+    }
+
 
     &:active {
         @include shadow(0.3);
@@ -159,6 +206,16 @@ h3 {
             color: $couleur-1;
         }
     }
+
+    &:hover {
+        @include shadow(0.3);
+        background: #FAFAFA;
+
+        .btn-etape__icone {
+            color: $couleur-1;
+        }
+    }
+
 
     &__div-chiffre {
         background: $couleur-1;
@@ -177,12 +234,22 @@ h3 {
             right: 100px;
         }
 
+        @include desktop-display {
+            width: 50px;
+            height: 50px;
+            right: 80px;
+        }
+
         div {
             color: white;
             font-size: 13px;
 
             @include tablet-display {
                 font-size: 24px;
+            }
+
+            @include desktop-display {
+                font-size: 20px;
             }
         }
     }
@@ -195,22 +262,40 @@ h3 {
             font-size: 28px;
         }
     }
+
+    &__txt {
+        @include desktop-display {
+            font-size: 18px;
+        }
+    }
 }
 
 .restaurants {
     padding: 55px 20px 40px 20px;
     background: $couleur-4;
+
     @include tablet-display {
         padding: 60px 40px;
     }
 
+    @include desktop-display {
+        padding: 60px 40px 100px 40px;
+    }
+
+
     &__titre {
         margin: 10px 0 20px 0;
     }
+
     &__grille-vignettes {
         @include tablet-display {
             display: flex;
-            flex-wrap: wrap;    
+            flex-wrap: wrap;
+        }
+
+        @include desktop-display {
+            flex-wrap: nowrap;
+            justify-content: space-between;
         }
     }
 }
@@ -223,6 +308,10 @@ h3 {
     @include tablet-display {
         width: 45%;
         margin: 40px auto;
+    }
+
+    @include desktop-display {
+        width: 23%;
     }
 
     &:active {
@@ -252,10 +341,17 @@ h3 {
             padding: 5px 15px;
             font-size: 14px;
             border-radius: 2px;
+
             @include tablet-display {
                 padding: 10px 20px;
                 font-size: 18px;
-                border-radius: 5px;    
+                border-radius: 5px;
+            }
+
+            @include desktop-display {
+                padding: 5px 10px;
+                font-size: 14px;
+                border-radius: 5px;
             }
         }
     }
@@ -272,6 +368,10 @@ h3 {
             padding: 20px 20px;
         }
 
+        @include desktop-display {
+            padding: 15px 15px;
+        }
+
 
         &__txt h3 {
             font-size: 18px;
@@ -279,13 +379,23 @@ h3 {
             @include tablet-display {
                 font-size: 22px;
             }
+
+            @include desktop-display {
+                font-size: 18px;
+            }
         }
+
         &__txt p {
             margin-top: 5px;
             font-size: 17px;
             font-weight: 300;
+
             @include tablet-display {
                 font-size: 19px;
+            }
+
+            @include desktop-display {
+                font-size: 16px;
             }
         }
 
@@ -316,6 +426,12 @@ h3 {
                 &:active {
                     opacity: 100%;
                 }
+
+                @include desktop-display {
+                    &:hover {
+                        opacity: 100%;
+                    }
+                }
             }
         }
     }
@@ -326,34 +442,53 @@ h3 {
 .apparition-menu-btn-1 {
     animation: apparition-menu 600ms both;
 }
+
 .apparition-menu-btn-2 {
     animation: apparition-menu 600ms 150ms both;
 }
+
 .apparition-menu-btn-3 {
     animation: apparition-menu 600ms 300ms both;
 }
+
 .apparition-menu-btn-4 {
     animation: apparition-menu 600ms 450ms both;
 }
+
 .photo-resto {
     height: 280px;
+
     @include tablet-display {
         width: 100%;
         object-fit: cover;
     }
+
+    @include desktop-display {
+        width: 100%;
+        height: 400px;
+    }
 }
+
 .photo-resto-vertical {
     height: 500px;
+
     @include tablet-display {
         width: 100%;
     }
+
+    @include desktop-display {
+        width: 100%;
+        height: 650px;
+    }
 }
+
 .menu {
     background: $couleur-4;
     border-radius: 50px 50px 0 0;
     position: relative;
     margin-top: -50px;
     padding: 35px 15px;
+
     @include tablet-display {
         margin-top: 0;
         padding: 60px 30px;
@@ -368,49 +503,60 @@ h3 {
             font-family: 'Shrikhand';
             font-size: 28px;
             font-weight: lighter;
+
             @include tablet-display {
                 font-size: 34px;
             }
         }
+
         & i {
             margin-right: 30px;
             font-size: 26px;
         }
     }
 }
+
 .menu-img-vertical {
     margin-top: -250px;
+
     @include tablet-display {
         margin-top: -180px;
         border-radius: 0;
     }
 }
+
 .section-plat {
     margin: 25px 0 40px 0;
+
     @include tablet-display {
         padding: 30px;
     }
-    
+
     &__titre {
         font-size: 16px;
         font-weight: lighter;
+
         @include tablet-display {
             font-size: 24px;
         }
-    
+
     }
+
     &__tiret {
         border-top: 3px solid $couleur-3;
         width: 40px;
         margin: 5px 0;
+
         @include tablet-display {
             width: 70px;
             border-top: 5px solid $couleur-3;
         }
     }
+
     &__grille-btn {
         display: flex;
         flex-direction: column;
+
         @include tablet-display {
             align-items: center;
         }

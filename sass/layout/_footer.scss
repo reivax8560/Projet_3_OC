@@ -3,7 +3,13 @@
     padding: 20px 40px 30px 25px;
 
     @include tablet-display {
-        padding: 40px 40px 300px 25px;
+        padding: 40px 40px 30px 25px;
+    }
+
+    @include desktop-display {
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
     }
 
     &__titre {
@@ -12,10 +18,25 @@
         font-weight: lighter;
         font-size: 18px;
         margin-bottom: 15px;
+
         @include tablet-display {
             font-size: 32px;
-            margin-bottom: 25px;    
-        }    
+            margin-bottom: 25px;
+        }
+
+        @include desktop-display {
+            font-size: 32px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    ul {
+        @include desktop-display {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .item-liste {
@@ -24,7 +45,11 @@
 
         @include tablet-display {
             margin: 15px 0;
-        }        
+        }
+
+        @include desktop-display {
+            margin: 15px 50px;
+        }
 
         &-a {
             text-decoration: none;
@@ -36,20 +61,26 @@
 
             @include tablet-display {
                 font-size: 24px;
-            }        
+            }
+
+            @include desktop-display {
+                font-size: 16px;
+            }
 
             &__icone-1 {
                 margin-right: 10px;
+
                 @include tablet-display {
                     margin-right: 20px;
-                }                
+                }
             }
 
             &__icone-2 {
                 margin-right: 7px;
+
                 @include tablet-display {
                     margin-right: 17px;
-                }                
+                }
             }
         }
     }
