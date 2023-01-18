@@ -469,16 +469,33 @@ h3 {
     }
 }
 
+.conteneur-photo {
+    height: 480px;
+
+    @include tablet-display {
+        height: 480px;
+    }
+
+    @include desktop-display {
+        height: 600px;
+    }
+}
+
 .photo-resto-vertical {
-    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 -70px;
 
     @include tablet-display {
         width: 100%;
+        object-fit: cover;
+        object-position: 0 -160px;
     }
 
     @include desktop-display {
         width: 100%;
-        height: 650px;
+        object-fit: cover;
+        object-position: 0 -200px;
     }
 }
 
