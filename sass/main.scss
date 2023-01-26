@@ -24,6 +24,10 @@ body {
     position: relative;
 }
 
+li {
+    list-style: none;
+}
+
 h1 {
     font-weight: 700;
     font-size: 24px;
@@ -456,7 +460,8 @@ h3 {
 }
 
 .photo-resto {
-    height: 280px;
+    // height: 280px;
+    width: 100%;
 
     @include tablet-display {
         width: 100%;
@@ -544,6 +549,8 @@ h3 {
 
 .section-plat {
     margin: 25px 0 40px 0;
+    width: 100%;
+
 
     @include tablet-display {
         padding: 30px;
@@ -573,6 +580,7 @@ h3 {
     &__grille-btn {
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         @include tablet-display {
             align-items: center;

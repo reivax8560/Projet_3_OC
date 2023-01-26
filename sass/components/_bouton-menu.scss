@@ -23,14 +23,14 @@
 }
 
 .btn-menu {
-    width: 100%;
-    height: 70px;
+    height: 50px;
     border-radius: 15px;
-    padding: 14px 10px;
+    padding: 10px 12px;
     background: white;
     border: none;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: flex-start;
     position: relative;
 
@@ -55,7 +55,7 @@
     }
 
     @include tablet-display {
-        height: 100px;
+        height: 80px;
         padding: 20px 25px;
 
         &:active .btn-menu__titre {
@@ -64,6 +64,10 @@
 
         &:active .detail {
             animation: btn-menu-detail_tab 500ms forwards;
+        }
+
+        &:active .prix {
+            animation: btn-menu-prix_tab-desk 500ms forwards;
         }
 
         &:active+.bloc-vert {
@@ -83,7 +87,7 @@
         }
 
         &:hover .prix {
-            animation: btn-menu-prix 500ms forwards;
+            animation: btn-menu-prix_tab-desk 500ms forwards;
         }
 
         &:hover+.bloc-vert {
@@ -97,7 +101,6 @@
 
     &__titre {
         font-size: 17px;
-        margin-bottom: 5px;
         width: 85%;
         text-align: left;
         overflow: hidden;
@@ -105,8 +108,7 @@
         text-overflow: ellipsis;
 
         @include tablet-display {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 23px;
         }
 
         @include desktop-display {
@@ -130,7 +132,7 @@
             text-overflow: ellipsis;
 
             @include tablet-display {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             @include desktop-display {
@@ -156,7 +158,7 @@
 
 .bloc-vert {
     background: $couleur-3;
-    height: 70px;
+    height: 100%;
     width: 60px;
     border-radius: 0 15px 15px 0;
     display: flex;
@@ -165,9 +167,8 @@
     top: 0;
 
     @include tablet-display {
-        height: 100px;
-        width: 80px;
-        right: -80px;
+        width: 100px;
+        right: -100px;
     }
 
     .icone-check {
@@ -175,6 +176,10 @@
         color: white;
         font-size: 24px;
         font-weight: bold;
+
+        @include tablet-display {
+            font-size: 40px;
+        }
 
         @include desktop-display {
             font-size: 30px;

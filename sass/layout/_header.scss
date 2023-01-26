@@ -17,19 +17,19 @@
         color: black;
         position: absolute;
         left: 25px;
-        top: 36px;
+        top: 30px;
 
         @include tablet-display {
             position: absolute;
             left: 50px;
-            top: 55px;
+            top: 45px;
             font-size: 24px;
         }
 
         @include desktop-display {
             position: absolute;
             left: 50px;
-            top: 50px;
+            top: 35px;
             font-size: 24px;
         }
     }

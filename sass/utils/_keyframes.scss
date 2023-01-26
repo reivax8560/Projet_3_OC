@@ -70,6 +70,16 @@
     }
 }
 
+@keyframes btn-menu-prix_tab-desk {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-80px);
+    }
+}
+
 @keyframes btn-menu-bloc-vert {
     0% {
         transform: translateX(0);
@@ -86,7 +96,7 @@
     }
 
     100% {
-        transform: translateX(-80px);
+        transform: translateX(-100px);
     }
 }
 

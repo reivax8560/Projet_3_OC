@@ -56,6 +56,14 @@
     transform: translateX(-60px);
   }
 }
+@keyframes btn-menu-prix_tab-desk {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
 @keyframes btn-menu-bloc-vert {
   0% {
     transform: translateX(0);
@@ -69,7 +77,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-80px);
+    transform: translateX(-100px);
   }
 }
 @keyframes btn-menu-icone-check {
@@ -101,13 +109,13 @@
   color: black;
   position: absolute;
   left: 25px;
-  top: 36px;
+  top: 30px;
 }
 @media screen and (min-width: 768px) {
   .header__fleche {
     position: absolute;
     left: 50px;
-    top: 55px;
+    top: 45px;
     font-size: 24px;
   }
 }
@@ -115,7 +123,7 @@
   .header__fleche {
     position: absolute;
     left: 50px;
-    top: 50px;
+    top: 35px;
     font-size: 24px;
   }
 }
@@ -198,14 +206,14 @@
 }
 
 .btn-menu {
-  width: 100%;
-  height: 70px;
+  height: 50px;
   border-radius: 15px;
-  padding: 14px 10px;
+  padding: 10px 12px;
   background: white;
   border: none;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: flex-start;
   position: relative;
 }
@@ -226,7 +234,7 @@
 }
 @media screen and (min-width: 768px) {
   .btn-menu {
-    height: 100px;
+    height: 80px;
     padding: 20px 25px;
   }
   .btn-menu:active .btn-menu__titre {
@@ -234,6 +242,9 @@
   }
   .btn-menu:active .detail {
     animation: btn-menu-detail_tab 500ms forwards;
+  }
+  .btn-menu:active .prix {
+    animation: btn-menu-prix_tab-desk 500ms forwards;
   }
   .btn-menu:active + .bloc-vert {
     animation: btn-menu-bloc-vert_tab-desk 500ms forwards;
@@ -250,7 +261,7 @@
     animation: btn-menu-detail 500ms forwards;
   }
   .btn-menu:hover .prix {
-    animation: btn-menu-prix 500ms forwards;
+    animation: btn-menu-prix_tab-desk 500ms forwards;
   }
   .btn-menu:hover + .bloc-vert {
     animation: btn-menu-bloc-vert_tab-desk 500ms forwards;
@@ -261,7 +272,6 @@
 }
 .btn-menu__titre {
   font-size: 17px;
-  margin-bottom: 5px;
   width: 85%;
   text-align: left;
   overflow: hidden;
@@ -270,8 +280,7 @@
 }
 @media screen and (min-width: 768px) {
   .btn-menu__titre {
-    font-size: 22px;
-    margin-bottom: 15px;
+    font-size: 23px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -295,7 +304,7 @@
 }
 @media screen and (min-width: 768px) {
   .btn-menu__ligne-inf .detail {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -321,7 +330,7 @@
 
 .bloc-vert {
   background: #99E2D0;
-  height: 70px;
+  height: 100%;
   width: 60px;
   border-radius: 0 15px 15px 0;
   display: flex;
@@ -331,9 +340,8 @@
 }
 @media screen and (min-width: 768px) {
   .bloc-vert {
-    height: 100px;
-    width: 80px;
-    right: -80px;
+    width: 100px;
+    right: -100px;
   }
 }
 .bloc-vert .icone-check {
@@ -341,6 +349,11 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .bloc-vert .icone-check {
+    font-size: 40px;
+  }
 }
 @media screen and (min-width: 992px) {
   .bloc-vert .icone-check {
@@ -449,6 +462,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   position: relative;
+}
+
+li {
+  list-style: none;
 }
 
 h1 {
@@ -880,7 +897,7 @@ h3 {
 }
 
 .photo-resto {
-  height: 280px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .photo-resto {
@@ -974,6 +991,7 @@ h3 {
 
 .section-plat {
   margin: 25px 0 40px 0;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .section-plat {
@@ -1003,6 +1021,7 @@ h3 {
 .section-plat__grille-btn {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .section-plat__grille-btn {
